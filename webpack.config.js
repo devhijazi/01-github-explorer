@@ -1,9 +1,9 @@
 const path = require('path');
 
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode:'development',
+  mode: 'development',
   entry: path.resolve(__dirname, 'src', 'index.jsx'), // Define o arquivo principal da aplicação
   output: {
     path: path.resolve(__dirname, 'dist'), // Define o arquivo a ser gerado pelo webpack
@@ -14,11 +14,15 @@ module.exports = {
     extensions: ['.js', '.jsx'], // define as extensões de arquivo para realizar a leitura
   },
 
-  plugins:[
+  plugins: [
     new HTMLWebpackPlugin({
-      path: path.resolve(__dirname,'public','index.html') // definindo o HTML estatico
-    })
+      path: path.resolve(__dirname, 'public', 'index.html'), // definindo o HTML estatico
+    }),
   ],
+
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+  },
 
   /**
    * Module
