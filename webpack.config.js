@@ -1,5 +1,7 @@
 const path = require('path');
 
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   mode:'development',
   entry: path.resolve(__dirname, 'src', 'index.jsx'), // Define o arquivo principal da aplicação
@@ -11,6 +13,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'], // define as extensões de arquivo para realizar a leitura
   },
+
+  plugins:[
+    new HTMLWebpackPlugin({
+      path: path.resolve(__dirname,'public','index.html') // definindo o HTML estatico
+    })
+  ],
 
   /**
    * Module
