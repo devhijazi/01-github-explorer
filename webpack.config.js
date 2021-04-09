@@ -19,7 +19,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      path: path.resolve(__dirname, 'public', 'index.html'), // definindo o HTML estatico
+      template: path.resolve(__dirname, 'public', 'index.html'), // definindo o HTML estatico
     }),
   ],
 
@@ -39,6 +39,11 @@ module.exports = {
         test: /\.jsx$/, // importação do tipo do arquivo
         exclude: /node_modules/,
         use: 'babel-loader', // Integração do webpack com o babel
+      },
+      {
+        test: /\.scss$/, // importação do tipo do arquivo
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'sass-loader'], // Integração do webpack com o babel
       },
     ],
   },
