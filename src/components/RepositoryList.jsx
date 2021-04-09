@@ -5,7 +5,7 @@ export function RepositoryList () {
     <section className="repository-list">
       <h1>Listagem de Repositórios</h1>
       <ul>
-        <RepositoryItem title="Repo 1"/>
+        <RepositoryItem title="Repo 1" description="Descrição do repo 1"/>
         <RepositoryItem/>
         <RepositoryItem/>
         <RepositoryItem/>

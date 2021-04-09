@@ -2,7 +2,7 @@ export function RepositoryItem(props){
   return(
     <li>
       <strong>{props.title ?? 'Sem Nome'}</strong>
-      <p>Descrição do repo 1</p>
+      <p>{props.description ?? 'Sem descrição'}</p>
       <a href="#">Ver Mais</a>
     </li>
   )
