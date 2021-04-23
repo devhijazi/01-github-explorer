@@ -1,24 +1,27 @@
+import {useState,useEffect} from 'react'
+
 import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss'
 
 
-const repositoryProps = {
-    name: "Estudos sobre React",
-    description:'Criando primeira aplicação com conceitos Basicos',
-    link:"www.reactools.hitechline.com.br"
-}
-
-
 export function RepositoryList () {
+  const [repositories, setRepositories] = useState([])
+
+  useEffect(()=>{
+    fetch('https://api.github.com/orgs/hitechline/repos')
+    .then(response => response.json())
+    .then(data => setRepositories(data))
+  },[])
+
+
   return (
     <section className="repository-list">
       <h1>Listagem de Repositórios</h1>
       <ul>
-        <RepositoryItem repositoryProps={repositoryProps}/>
-        <RepositoryItem repositoryProps={repositoryProps}/>
-        <RepositoryItem repositoryProps={repositoryProps}/>
-        <RepositoryItem repositoryProps={repositoryProps}/>
+        {repositories.map(repository => {
+          return <RepositoryItem key={repository.name} repositoryProps={repository}/>
+        })}
       </ul>
     </section>
   )
