@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "noEmit": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Diz para o typescript que nós vamos lhe dar com a DOM ou seja o HTML
+    "allowJs": true, // Diz para a aplicação que podemos ter arquivos escritos com TYpeScript e Javascript
+    "jsx": "react-jsx", // Usar html dentro do typescript
+    "noEmit": true, 
     "strict": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true, // Adiciona a possibilidade de importar arquivos JSON
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "include": ["src"] // Dizendo para o typescript está dentro exclusivamente dentro de SRC
 }
