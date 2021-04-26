@@ -9,14 +9,14 @@ const isDevelopment = process.env.NODE_ENV !== 'production'; // definindo o esta
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map', // source map para melhor debugar de erros apresentados no console
-  entry: path.resolve(__dirname, 'src', 'index.jsx'), // Define o arquivo principal da aplicação
+  entry: path.resolve(__dirname, 'src', 'index.tsx'), // Define o arquivo principal da aplicação
   output: {
     path: path.resolve(__dirname, 'dist'), // Define o arquivo a ser gerado pelo webpack
     filename: 'bundle.js', // define o nome do arquivo que vai ser buildado
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'], // define as extensões de arquivo para realizar a leitura
+    extensions: ['.js', '.jsx', '.ts', '.tsx'], // define as extensões de arquivo para realizar a leitura
   },
 
   devServer: {
@@ -40,7 +40,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/, // importação do tipo do arquivo
+        test: /\.(j|t)sx$/, // importação do tipo do arquivo
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

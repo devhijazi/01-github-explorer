@@ -1,6 +1,7 @@
 module.exports = {
   presets: [
     '@babel/preset-env', // Identifica o ambiente de produção da aplicação
+    '@babel/preset-typescript', 
     [
       '@babel/preset-react',
       {
